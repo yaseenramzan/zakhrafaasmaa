@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta name="google-site-verification" content="uxz8DG14Scc2XUbs6OgpqAB4WQAXynb2TnAoJX_C96o" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أداة زخرفة اسماء انجليزي و عربي - إنشاء أسماء مزخرفة احترافية للألعاب ومنصات التواصل: فري فاير، ببجي، فيسبوك، انستا">
+    <meta name="keywords" content="زخرفة اسماء, زخرفة انجليزي, زخرفة عربي, أسماء مزخرفة, فري فاير, ببجي, فيسبوك, انستا">
+    <meta name="author" content="zakhrafatasmaa.com">
+    <meta property="og:title" content="زخرفة اسماء انجليزي و عربي - فري فاير, ببجي, فيسبوك, انستا">
+    <meta property="og:description" content="أداة متقدمة لإنشاء أسماء مزخرفة فريدة وجذابة">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zakhrafatasmaa.com/">
+    <title>زخرفة اسماء انجليزي و عربي | أداة احترافية متقدمة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-bg: #0a0e27;
+            --darker-bg: #050711;
+            --card-bg: #1a1f3a;
+            --accent-1: #ff6b35;
+            --accent-2: #ff8c42;
+            --accent-3: #ffa500;
+            --accent-4: #ffb703;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b9c6;
+            --success: #00d4aa;
+            --warning: #ff6b9d;
+            --glow: rgba(255, 107, 53, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 50%, #1a0f2e 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent-1);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 0.3rem;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 50%, var(--accent-3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero a {
+            color: var(--accent-1);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .hero a:hover {
+            color: var(--accent-3);
+            border-bottom-color: var(--accent-3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Tool Section - Completely Redesigned */
+        .tool-section {
+            padding: 4rem 1.5rem;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tool-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tool-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        /* Input Panel */
+        .input-panel {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .input-panel h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-1);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            background: rgba(26, 31, 58, 0.6);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            direction: rtl;
+            text-align: right;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-1);
+            background: rgba(26, 31, 58, 0.9);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .decoration-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .deco-btn {
+            padding: 0.9rem;
+            background: rgba(255, 107, 53, 0.2);
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            border-radius: 10px;
+            color: var(--accent-1);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .deco-btn:hover {
+            background: rgba(255, 107, 53, 0.4);
+            border-color: var(--accent-1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            border: none;
+            border-radius: 12px;
+            color: var(--darker-bg);
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            font-family: 'Cairo', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Preview Panel */
+        .preview-panel {
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            backdrop-filter: blur(10px);
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-panel h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .preview-display {
+            flex: 1;
+            background: rgba(26, 31, 58, 0.4);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px dashed rgba(255, 165, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .preview-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+
+        .preview-message {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .results-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+            max-height: 250px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .results-box::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .results-box::-webkit-scrollbar-track {
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 10px;
+        }
+
+        .results-box::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            border-radius: 10px;
+        }
+
+        .result-chip {
+            background: rgba(255, 107, 53, 0.15);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 0.9rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .result-chip:hover {
+            background: rgba(255, 107, 53, 0.25);
+            border-color: var(--accent-1);
+            transform: translateX(-5px);
+        }
+
+        .chip-text {
+            flex: 1;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+
+        .chip-copy {
+            padding: 0.5rem 1rem;
+            background: var(--success);
+            border: none;
+            border-radius: 8px;
+            color: var(--darker-bg);
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .chip-copy:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 4rem 1.5rem;
+            background: rgba(26, 31, 58, 0.5);
+            margin-top: 4rem;
+            border-top: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-1) 0%, var(--accent-3) 100%);
+            border-radius: 3px;
+        }
+
+        article p {
+            margin-bottom: 1.3rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        article a {
+            color: var(--accent-1);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        article a:hover {
+            color: var(--accent-3);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-1) 0%, var(--accent-3) 100%);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-1);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .feature-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .faq-container {
+            display: grid;
+            gap: 1.2rem;
+            margin: 2.5rem 0;
+        }
+
+        .faq-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-box:hover {
+            border-color: var(--accent-1);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 165, 0, 0.08) 100%);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--accent-1);
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            border-top: 2px solid rgba(255, 107, 53, 0.2);
+            color: var(--text-secondary);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--success) 0%, #00a878 100%);
+            color: var(--darker-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 2000;
+            font-weight: 700;
+            pointer-events: none;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+
+            .decoration-options {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-panel {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1rem;
+            }
+
+            .tool-section {
+                padding: 2rem 1rem;
+            }
+
+            .input-panel,
+            .preview-panel {
+                padding: 1.5rem;
+            }
+
+            .preview-text {
+                font-size: 1.6rem;
+            }
+
+            .notification {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">🔥 نمط</div>
+            <nav>
+                <ul>
+                    <li><a href="#tool">الأداة</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#faq">الأسئلة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>صمم اسمك المزخرف</h1>
+            <p>الأسماء تحمل معنى وهوية تعبر عن الشخص، لكن شكل الاسم أصبح لا يقل أهمية عن معناه، خاصة في العالم الرقمي. على منصات التواصل الاجتماعي والألعاب، يبحث المستخدمون دائمًا عن طرق للتميز وجذب الانتباه. وهنا تأتي أهمية <a href="https://zakhrafatasmaa.com/">زخرفة اسماء انجليزي</a> وتطبيقاتها المتعددة. استخدم أداتنا الحديثة لإنشاء أسماء فريدة وجذابة بسهولة تامة.</p>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <section class="tool-section" id="tool">
+        <div class="tool-header">
+            <h2>✨ مولد الأسماء المزخرفة</h2>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">أدخل اسمك واختر النمط المفضل لديك</p>
+        </div>
+
+        <div class="tool-container">
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <h3>🎯 إدخال البيانات</h3>
+                
+                <div class="input-group">
+                    <label for="nameInput">أدخل اسمك</label>
+                    <input type="text" id="nameInput" placeholder="Ahmed أو أحمد" autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label>اختر النمط المفضل</label>
+                    <div class="decoration-options">
+                        <button class="deco-btn" onclick="selectStyle(0)">عالي</button>
+                        <button class="deco-btn" onclick="selectStyle(1)">إيطالي</button>
+                        <button class="deco-btn" onclick="selectStyle(2)">عريض</button>
+                        <button class="deco-btn" onclick="selectStyle(3)">رموز</button>
+                        <button class="deco-btn" onclick="selectStyle(4)">ألماس</button>
+                        <button class="deco-btn" onclick="selectStyle(5)">نجوم</button>
+                        <button class="deco-btn" onclick="selectStyle(6)">سحر</button>
+                        <button class="deco-btn" onclick="selectStyle(7)">حدود</button>
+                    </div>
+                </div>
+
+                <button class="generate-btn" onclick="generatePreview()">⚡ معاينة مباشرة</button>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel">
+                <h3>👁️ معاينة النتيجة</h3>
+                
+                <div class="preview-display">
+                    <div id="previewContent" class="preview-message">سيظهر الاسم المزخرف هنا</div>
+                </div>
+
+                <label style="color: var(--accent-1); margin-top: 1rem; display: block; margin-bottom: 0.8rem; font-weight: 700;">النتائج المحفوظة</label>
+                <div class="results-box" id="resultsBox">
+                    <p style="color: var(--text-secondary); text-align: center; padding: 1rem;">لا توجد نتائج حتى الآن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="content-section">
+        <div class="container">
+            <article>
+                <!-- Section 1 -->
+                <section>
+                    <h2 class="section-title">📖 ما هي زخرفة الأسماء؟</h2>
+                    <p>زخرفة اسماء هي عملية تحويل الأسماء العادية إلى نصوص مزخرفة باستخدام الرموز والخطوط الخاصة وحروف Unicode. الهدف منها هو إنشاء اسامي مزخرفه جذابة بصريًا وتلفت الانتباه. بدلاً من استخدام الحروف العادية، تضيف زخرفة الاسماء عناصر فنية تجعل الاسم أكثر تميزًا.</p>
+                    <p>يمكن أن تشمل هذه الزخرفة زخرفة خط عربي أو خطوط إنجليزية أنيقة مع رموز مختلفة. سواء كنت تريد زخرفة اسماء عربي أو زخرفة اسماء انجليزي، فإن الفكرة الأساسية هي تحسين شكل الاسم. تُستخدم هذه الأسماء في الألعاب ووسائل التواصل الاجتماعي وحتى في العلامات التجارية.</p>
+                </section>
+
+                <!-- Features -->
+                <section id="features">
+                    <h2 class="section-title">🎁 المميزات الرئيسية</h2>
+                    <div class="feature-grid">
+                        <div class="feature-box">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-title">توليد فوري</div>
+                            <div class="feature-text">احصل على نتائج فورية خلال لحظات بدون انتظار</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-title">تنوع الأنماط</div>
+                            <div class="feature-text">اختر من عشرات الأنماط المختلفة والجذابة</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-title">متوافق مع الجميع</div>
+                            <div class="feature-text">اعمل على فيسبوك وانستا وببجي وفري فاير</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🔐</div>
+                            <div class="feature-title">آمن وموثوق</div>
+                            <div class="feature-text">أداة آمنة تماماً بدون أي مخاطر</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">💯</div>
+                            <div class="feature-title">مجاني بالكامل</div>
+                            <div class="feature-text">استخدم الأداة مجاناً بلا أي تكاليف</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🌍</div>
+                            <div class="feature-title">عربي وإنجليزي</div>
+                            <div class="feature-text">دعم كامل للغة العربية والإنجليزية</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How to Use -->
+                <section>
+                    <h2 class="section-title">📚 كيفية الاستخدام</h2>
+                    <p>استخدام أداة زخرفة اسماء سهل جدًا. أولاً، قم بإدخال الاسم الذي تريد زخرفته، سواء كان بالعربية أو الإنجليزية. بعد ذلك، اختر النمط المفضل لديك من الخيارات المتاحة.</p>
+                    <p>ثم اضغط على زر المعاينة لرؤية النتيجة مباشرة. يمكنك حفظ النتائج التي تعجبك والنسخ منها مباشرة لاستخدامها في حساباتك على وسائل التواصل الاجتماعي أو الألعاب. البعض يفضل الأنماط البسيطة والبعض يفضل زخرفة عربية احترافية متقدمة.</p>
+                </section>
+
+                <!-- PUBG -->
+                <section>
+                    <h2 class="section-title">🎮 زخرفة اسماء ببجي</h2>
+                    <p>في لعبة ببجي، الاسم المزخرف يعطي اللاعب هوية مميزة ويجعله يبرز بين اللاعبين. تساعد زخرفة اسماء ببجي على إنشاء أسماء فريدة باستخدام رموز وخطوط جذابة. يفضل اللاعبون اختيار أسماء تعكس القوة أو الاحتراف أو الغموض.</p>
+                    <p>يستخدم البعض أيضًا أنماط مستوحاة من زخرفة اسماء فري فاير اسطورية للحصول على مظهر مميز. من المهم التأكد من أن الاسم مدعوم داخل اللعبة لتجنب أي مشاكل. باستخدام أداة زخرفة مناسبة، يمكنك إنشاء اسم رائع يعبر عن شخصيتك داخل اللعبة.</p>
+                </section>
+
+                <!-- English -->
+                <section>
+                    <h2 class="section-title">🔤 خطوط زخرفة انجليزي</h2>
+                    <p>تُعد خطوط زخرفة انجليزي أنيقة من أكثر الأنماط استخدامًا لإنشاء أسماء جذابة. توفر هذه الخطوط مظهرًا عصريًا ومميزًا يناسب الاستخدامات المختلفة. تشمل هذه الأنماط خطوطًا مزخرفة أو مائلة أو عريضة باستخدام رموز Unicode.</p>
+                    <p>يفضل الكثير من المستخدمين زخرفة اسماء انجليزي لأنها تعمل على معظم المنصات بسهولة. سواء للاستخدام الشخصي أو الاحترافي، تضيف هذه الخطوط لمسة جمالية رائعة. تساعد أدوات زخرفة انجليزي في إنشاء هذه التصاميم بسرعة وسهولة.</p>
+                </section>
+
+                <!-- Instagram -->
+                <section>
+                    <h2 class="section-title">📸 زخرفة اسماء انستا</h2>
+                    <p>إنستقرام منصة تعتمد على الشكل البصري، لذلك يلعب الاسم المزخرف دورًا مهمًا في جذب الانتباه. تساعد زخرفة اسماء انستا المستخدمين على إنشاء أسماء فريدة وجذابة. مع وجود ملايين المستخدمين، يصبح التميز أمرًا ضروريًا.</p>
+                    <p>يستخدم الكثير من المؤثرين زخرفة اسماء انستقرام لبناء هوية قوية وجذب المتابعين. يمكن أن تشمل الزخرفة رموزًا وإيموجي وخطوطًا فنية. باستخدام أداة زخرفة، يمكنك التأكد من أن الاسم يظهر بشكل صحيح على جميع الأجهزة.</p>
+                </section>
+
+                <!-- Facebook -->
+                <section>
+                    <h2 class="section-title">👥 زخرفة اسماء فيسبوك</h2>
+                    <p>يفرض فيسبوك بعض القيود على الأسماء، لذلك من المهم استخدام زخرفة اسماء يقبلها الفيس بوك. تساعد أدوات زخرفة اسماء فيسبوك على إنشاء أسماء متوافقة وجذابة في نفس الوقت. غالبًا ما تكون هذه الأسماء بسيطة لكنها أنيقة.</p>
+                    <p>يفضل البعض استخدام زخرفة عربي، بينما يفضل آخرون زخرفة انجليزي. الاسم المزخرف يجعل الحساب أكثر تميزًا ويجذب الانتباه. باستخدام الأداة المناسبة، يمكنك إنشاء اسم جميل ومتوافق بسهولة.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq">
+                    <h2 class="section-title">❓ الأسئلة الشائعة</h2>
+                    <div class="faq-container">
+                        <div class="faq-box">
+                            <div class="faq-question">ما استخدام زخرفة اسماء؟</div>
+                            <div class="faq-answer">تُستخدم لإنشاء أسماء مزخرفة وجذابة لوسائل التواصل الاجتماعي والألعاب بسهولة واحترافية</div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">هل زخرفة اسماء مجانية؟</div>
+                            <div class="faq-answer">نعم، معظم الأدوات مجانية وسهلة الاستخدام بدون الحاجة لأي دفع</div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">هل يمكن استخدام الأسماء في جميع المنصات؟</div>
+                            <div class="faq-answer">نعم، ولكن يجب اختيار الأنماط المتوافقة مع كل منصة</div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">ما الفرق بين زخرفة عربي وانجليزي؟</div>
+                            <div class="faq-answer">زخرفة عربي تعتمد على الخط العربي والرموز، بينما زخرفة انجليزي تعتمد على الحروف الإنجليزية</div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">هل هذه الأدوات آمنة؟</div>
+                            <div class="faq-answer">نعم، لأنها تقوم فقط بإنشاء أنماط نصية آمنة وموثوقة</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section>
+                    <h2 class="section-title">🎯 الخلاصة</h2>
+                    <p>أصبحت زخرفة اسماء وسيلة مهمة للتعبير عن الهوية في العالم الرقمي. سواء كنت تبحث عن زخرفة اسماء عربية أو زخرفة اسماء بالفرنسية أو الإنجليزية، فإن الخيارات متعددة ومتنوعة.</p>
+                    <p>من الألعاب مثل زخرفة اسماء فري فاير بالعربي وزخرفة اسماء فري فاير بالانجليزي إلى وسائل التواصل الاجتماعي، تساعد الأسماء المزخرفة على التميز والظهور بشكل احترافي. بفضل ميزات مثل التوليد السريع وتعدد الأنماط والتوافق مع المنصات، أصبحت هذه الأدوات سهلة الاستخدام وفعالة.</p>
+                    <p>باستخدام كتابة مزخرفة، يمكنك تحويل اسمك إلى تصميم فريد يعبر عن شخصيتك ويجذب الانتباه. اختر النمط المناسب واجعل اسمك مميزًا وجذابًا.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 أداة زخرفة الأسماء - جميع الحقوق محفوظة</p>
+        <p>مختص في زخرفة اسماء عربي وانجليزي احترافية</p>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">✅ تم النسخ بنجاح!</div>
+
+    <!-- JavaScript -->
+    <script>
+        const decorationStyles = [
+            { name: 'عالي', fn: (text) => text.split('').map(char => {
+                const superscript = {'a': 'ᴬ', 'b': 'ᴮ', 'c': 'ᶜ', 'd': 'ᴰ', 'e': 'ᴱ', 'f': 'ᶠ', 'g': 'ᴳ', 'h': 'ʰ', 'i': 'ᴵ', 'j': 'ᴶ', 'k': 'ᴷ', 'l': 'ᴸ', 'm': 'ᴹ', 'n': 'ᴺ', 'o': 'ᴼ', 'p': 'ᴾ', 'q': 'ᵒ', 'r': 'ᴿ', 's': 'ˢ', 't': 'ᵀ', 'u': 'ᵁ', 'v': 'ᵛ', 'w': 'ʷ', 'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ', 'A': 'ᴬ', 'B': 'ᴮ', 'C': 'ᶜ', 'D': 'ᴰ', 'E': 'ᴱ', 'F': 'ᶠ', 'G': 'ᴳ', 'H': 'ʰ', 'I': 'ᴵ', 'J': 'ᴶ', 'K': 'ᴷ', 'L': 'ᴸ', 'M': 'ᴹ', 'N': 'ᴺ', 'O': 'ᴼ', 'P': 'ᴾ', 'Q': 'ᵒ', 'R': 'ᴿ', 'S': 'ˢ', 'T': 'ᵀ', 'U': 'ᵁ', 'V': 'ᵛ', 'W': 'ʷ', 'X': 'ˣ', 'Y': 'ʸ', 'Z': 'ᶻ', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+                return superscript[char] || char;
+            }).join('') },
+            { name: 'إيطالي', fn: (text) => text.split('').map(char => {
+                const italic = {'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉', 'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎', 'n': '𝒏', 'o': '𝒐', 'p': '𝒑', 'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛', 'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯', 'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴', 'N': '𝑵', 'O': '𝑶', 'P': '𝑷', 'Q': '𝑸', 'R': '𝑹', 'S': '𝑺', 'T': '𝑻', 'U': '𝑼', 'V': '𝑽', 'W': '𝑾', 'X': '𝑿', 'Y': '𝒀', 'Z': '𝒁'};
+                return italic[char] || char;
+            }).join('') },
+            { name: 'عريض', fn: (text) => text.split('').map(char => {
+                const bold = {'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉', 'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎', 'n': '𝒏', 'o': '𝒐', 'p': '𝒑', 'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛', 'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯', 'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴', 'N': '𝑵', 'O': '𝑶', 'P': '𝑷'};
+                return bold[char] || char;
+            }).join('') },
+            { name: 'رموز', fn: (text) => text.split('').map(char => char + '█').join(' ') },
+            { name: 'ألماس', fn: (text) => '◆ ' + text.split('').join(' ◆ ') + ' ◇' },
+            { name: 'نجوم', fn: (text) => '⭐ ' + text + ' ★' },
+            { name: 'سحر', fn: (text) => text.split('').map(char => {
+                const magic = {'a': 'α', 'e': 'ε', 'o': 'ο', 'i': 'ι', 'u': 'υ'};
+                return magic[char] || char;
+            }).join('') },
+            { name: 'حدود', fn: (text) => '「 ' + text + ' 」' }
+        ];
+
+        let selectedStyle = 0;
+        let savedResults = [];
+
+        function selectStyle(index) {
+            selectedStyle = index;
+            generatePreview();
+        }
+
+        function generatePreview() {
+            const nameInput = document.getElementById('nameInput').value.trim();
+            const previewContent = document.getElementById('previewContent');
+            
+            if (!nameInput) {
+                previewContent.innerHTML = '<div class="preview-message">الرجاء إدخال اسم أولاً</div>';
+                return;
+            }
+
+            const decorated = decorationStyles[selectedStyle].fn(nameInput);
+            previewContent.innerHTML = '<div class="preview-text">' + decorated + '</div>';
+            
+            // Add to results
+            if (!savedResults.includes(decorated)) {
+                savedResults.unshift(decorated);
+                if (savedResults.length > 5) savedResults.pop();
+                updateResults();
+            }
+        }
+
+        function updateResults() {
+            const resultsBox = document.getElementById('resultsBox');
+            if (savedResults.length === 0) {
+                resultsBox.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 1rem;">لا توجد نتائج حتى الآن</p>';
+                return;
+            }
+
+            resultsBox.innerHTML = savedResults.map(result => `
+                <div class="result-chip">
+                    <div class="chip-text">${result}</div>
+                    <button class="chip-copy" onclick="copy('${result.replace(/'/g, "\\'")}')">نسخ</button>
+                </div>
+            `).join('');
+        }
+
+        function copy(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.getElementById('notification');
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 2000);
+            });
+        }
+
+        document.getElementById('nameInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') generatePreview();
+        });
+    </script>
+</body>
+</html>
